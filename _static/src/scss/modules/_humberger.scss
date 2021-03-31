@@ -1,0 +1,190 @@
+/********************************/
+/*          humberger           */
+/********************************/
+@use '../setting/reset' as *;
+@use '../setting/setting' as *;
+@use '../mixin/mixin' as *;
+//@use '../../modules/' as *;
+//@use '../../page/index' as *;
+//@use '../../animetion/animetion' as *;
+//@use '../../sp/sp' as *;
+
+/**************************************************/
+.sp-nav-wrapper {
+    //display: none;
+    visibility: hidden;
+}
+
+/* ================================== */
+/*                 sp                 */
+/* ================================== */
+@media screen and (max-width: 767px) {
+  /* .btn-trigger */
+    .btn-trigger {
+        position: relative;
+        width: 30px;
+        height: 26px;
+        cursor: pointer;
+        margin: 15px;
+    }
+    .btn-trigger span {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: #707070;
+    }
+    .btn-trigger, .btn-trigger span {
+        display: inline-block;
+        transition: all .5s;
+        box-sizing: border-box;
+    }
+    .btn-trigger span:nth-of-type(1) {
+        top: 0;
+    }
+    .btn-trigger span:nth-of-type(2) {
+        top: 48%;
+    }
+    .btn-trigger span:nth-of-type(3) {
+        bottom: 0;
+    }
+
+    /* #btn01 */
+    #btn01.active span:nth-of-type(1) {
+        -webkit-transform: translateY(12px) rotate(-40deg);
+        transform: translateY(11px) rotate(-40deg);
+        background-color: #707070;
+    }
+    #btn01.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+    #btn01.active span:nth-of-type(3) {
+        -webkit-transform: translateY(-12px) rotate(40deg);
+        transform: translateY(-12px) rotate(40deg);
+        background-color: #707070;
+    }
+
+    /* add-css */
+    .of-hidden{
+        overflow: hidden;
+    }
+    .sp-nav-wrapper {
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        z-index: 90;
+        top: 0;
+        left: 0%;
+        background-color: #fcc;
+        color: #fff;
+        opacity: 0;
+        -webkit-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
+    }
+    .sp-nav-bg{
+        display: flex;
+        align-items: center;
+        height:100%;
+    }
+    .sp-navi-right {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .content{
+        position: absolute;
+        z-index:100;
+        right:0;
+    }
+    /* nav-inner */
+    /*.button-t{
+        color:#fff;
+        /*background-color: $color-pk;
+        max-width:367px;
+        height:68px;*//*
+        text-align: center;
+        line-height: 48px;
+        border-radius: 48px;
+        font-size: $f_24;
+        font-family: "游明朝体", serif;
+        box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.49);
+        margin:0 auto;
+        padding:0;
+        width:100%;
+    }*/
+    .btn-big-t{
+        max-width: 252.5px;
+        margin: 0 auto;
+    }
+    .sp-nav-t{
+        text-align: center;
+        color:#000;
+        font-size: 24px;
+        margin-bottom:35px;
+    }
+    .active{
+        //display:block;
+        opacity: 1;
+        //z-index: 100;
+        visibility: visible;
+    }
+
+}
+
+// @ヘッダー 上スクロールで表示、下スクロールで非表示（　DOM_after.js 11行目も表示 ）
+#header{
+    /*fixedで上部固定*/
+	position: fixed;
+	//height: 70px;
+	width:100%;
+    z-index: 999;/*最前面へ*/
+	/*以下はレイアウトのためのCSS*/
+	//display: flex;
+	//justify-content: space-between;
+	//align-items: center;
+	//background:#333;
+	//color:#fff;
+	//text-align: center;
+	//padding: 20px;
+}
+/*　上に上がる動き　*/
+#header.UpMove{
+	animation: UpAnime 0.5s forwards;
+}
+@keyframes UpAnime{
+  from {
+    opacity: 1;
+	transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+	transform: translateY(-100px);
+  }
+}
+/*　下に下がる動き　*/
+#header.DownMove{
+	animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime{
+  from {
+  	opacity: 0;
+	transform: translateY(-100px);
+  }
+  to {
+  	opacity: 1;
+	transform: translateY(0);
+  }
+}
+/* 以下は検証用のレイアウトのための CSS*//*
+nav ul{
+list-style: none;
+display: flex;
+justify-content: center;
+}
+nav ul li a{
+text-decoration: none;
+color: #666;
+padding:10px;
+}
+section{
+padding:300px 0;
+}*/

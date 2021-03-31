@@ -1,0 +1,100 @@
+/********************************/
+/*            home              */
+/********************************/
+@use '../../setting/reset' as *;
+@use '../../setting/setting' as *;
+@use '../../mixin/mixin' as *;
+//@use '../../modules/' as *;
+//@use '../../page/index' as *;
+//@use '../../animetion/animetion' as *;
+//@use '../../sp/sp' as *;
+
+/**************************************************/
+/* header */
+.header-back{
+    position: sticky;
+    top:0;
+    width:100%;
+    background-color: rgba(255, 0, 0, 0.411);
+    z-index: 99;
+}
+.header-nav {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top:26px;
+}
+.header-nav ul{
+    display:flex;
+}
+.logo{
+    width:147px;
+}
+.nav-li{
+    margin-left:40px;
+}
+.a{
+    height:1000px;
+    background-color: #fcc;
+}
+.b{
+    height:1000px;
+    background-color: #a3ff8c;
+}
+.c{
+    height:1000px;
+    background-color: #ffb68c;
+}
+.d{
+    height:1000px;
+    background-color: #cb8cff;
+}
+
+.none{
+    opacity: 0;
+    transition: 0.7s;
+}
+.fixed{
+    transition: 0.7s;
+}
+
+/* fv-header */
+
+
+
+/* fv */
+.fv {
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    //clip-path: polygon(0% 0%, 100% 0%, 100% 91%, 0% 100%);
+    background-color: #E2E9F0;
+}
+
+/* ratin */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+    
+}
+
+/* ================================== */
+/*                 sp                 */
+/* ================================== */
+@media screen and (max-width: 750px) {
+    /* 共通 */
+    .sp80{
+    width:92%;
+    margin: 0 auto;
+    /*background-color: rgba(0, 0, 255, 0.452);*/
+    }
+    .wi997 {
+        width: 100%;
+        max-width: 997px;
+        margin: 0 auto;
+    }
+
+}
+@media screen and (max-width: 375px) {
+    /* header */
+
+}

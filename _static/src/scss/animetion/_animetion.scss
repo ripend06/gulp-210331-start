@@ -1,0 +1,55 @@
+/********************************/
+/*        animetion             */
+/********************************/
+@use '../setting/reset' as *;
+@use '../setting/setting' as *;
+@use '../mixin/mixin' as *;
+//@use '../../modules/' as *;
+//@use '../../page/index' as *;
+//@use '../../animetion/animetion' as *;
+//@use '../../sp/sp' as *;
+
+/**************************************************/
+/* lp-big *//*
+.hover:hover {
+  -webkit-animation: big 0.15s;
+          animation: big 0.15s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes big {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@keyframes big {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}*/
+
+/* yokobou *//*
+.header-nav{
+    a:hover {
+        background-color: rgb(0, 0, 0);
+        transition: 0.7s;
+    }
+}*/
+
+@media screen and (max-width: 767px) {
+    .hover:hover{
+        animation: none;
+    }
+ }
